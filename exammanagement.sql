@@ -190,7 +190,8 @@ INSERT INTO `room` (`roomid`, `columncount`, `capacity`) VALUES
 CREATE TABLE `student` (
   `studentid` int NOT NULL,
   `name` text NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `email` text NOT NULL
 ) ;
 
 --
