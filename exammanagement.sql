@@ -188,7 +188,7 @@ INSERT INTO `room` (`roomid`, `columncount`, `capacity`) VALUES
 --
 
 CREATE TABLE `student` (
-  `studentid` int NOT NULL,
+  `studentid` int NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `password` text NOT NULL,
   `email` text NOT NULL
