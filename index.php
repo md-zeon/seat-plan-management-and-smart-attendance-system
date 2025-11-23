@@ -23,7 +23,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container px-5">
-            <a class="navbar-brand" href="#page-top">BUBT</a>
+            <a class="navbar-brand" href="#page-top">JU</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
@@ -34,7 +34,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#studentloginmodel">Student</a></li>
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#teacherloginmodel">Teacher</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#adminloginmodel">Admin</a></li>
 
                         </ul>
                     </li>
@@ -46,7 +46,7 @@
     <header class="masthead text-center text-white">
         <div class="masthead-content">
             <div class="container px-5">
-                <h1 class="masthead-heading mb-0">BUBT</h1>
+                <h1 class="masthead-heading mb-0">JU</h1>
                 <h2 class="masthead-subheading mb-0">Seatplan Management</h2>
              <!-- <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a> -->
            <br>
@@ -116,7 +116,7 @@
     <!-- Footer-->
     <footer class="py-5 bg-black">
         <div class="container px-5">
-            <p class="m-0 text-center text-white small">Copyright &copy; bubt 2023</p>
+            <p class="m-0 text-center text-white small">Copyright &copy; JU (Jahangirnagar University) 2023</p>
         </div>
     </footer>
 
@@ -133,8 +133,12 @@
                 <form action="studentsignupcore.php" method="post">
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="studentid" class="form-label">Student Id</label>
-                            <input type="text" class="form-control" id="studentid" aria-describedby="studentid" name="studentid">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="name" name="name">
+                        </div>
+                        <div class="mb-3">
+<label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -167,8 +171,8 @@
                 <form action="studentlogincore.php" method="post">
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="studentid" class="form-label">Student Id</label>
-                            <input type="text" class="form-control" id="studentid" name="studentid">
+                            <label for="email" class="form-label">Student ID or Email</label>
+                            <input type="text" class="form-control" id="email" name="email">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -186,18 +190,18 @@
 
 
 
-    <div class="modal fade" id="teacherloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="adminloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Teacher login</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Admin login</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="teacherlogincore.php" method="post">
+                <form action="adminlogincore.php" method="post">
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="teacherid" class="form-label">Teacher Id</label>
-                            <input type="text" class="form-control" id="teacherid" name="teacherid">
+                            <label for="adminid" class="form-label">Admin Id</label>
+                            <input type="text" class="form-control" id="adminid" name="adminid">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
