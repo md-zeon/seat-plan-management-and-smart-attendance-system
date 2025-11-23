@@ -51,6 +51,9 @@ include("header.php");
                                                 <td><?php echo $name  ?></td>
                                                 <td class="text-right">
                                                     <div class="actions">
+                                                        <a href="courseedit.php?courseid=<?php echo $courseid  ?>" class="btn btn-sm bg-success-light mr-2">
+                                                            <i class="fas fa-pen"></i>
+                                                        </a>
                                                         <a href="coursedeletecore.php?courseid=<?php echo $courseid  ?>" class="btn btn-sm bg-danger-light">
                                                             <i class="fas fa-trash"></i>
                                                         </a>
