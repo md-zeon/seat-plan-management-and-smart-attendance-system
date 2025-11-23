@@ -2,16 +2,16 @@
 include_once 'dbconnection.php';
 session_start();
 
-$teacherid  = $_POST['teacherid'];
+$adminid  = $_POST['adminid'];
 $password = $_POST['password'];
 
-$query = "select * from teacher where teacherid ='" . $teacherid  . "' and password='" . $password . "';";
+$query = "select * from teacher where teacherid ='" . $adminid  . "' and password='" . $password . "';";
 $result = $conn->query($query);
 if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
-        $_SESSION['user'] = "teacher";
-        $_SESSION['teacherid'] = $row['teacherid'];
+        $_SESSION['user'] = "admin";
+        $_SESSION['adminid'] = $row['teacherid'];
         header("Location: teacher");
     }
 } else {
