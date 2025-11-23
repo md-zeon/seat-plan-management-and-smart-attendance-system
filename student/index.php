@@ -7,6 +7,7 @@ include("header.php");
          <div class="row">
             <div class="col-sm-12">
                <h3 class="page-title">Welcome Student!</h3>
+               <p>Your Student ID: <?php echo $_SESSION['studentid']; ?></p>
                <ul class="breadcrumb">
                   <!-- <li><a href="index.php" class="breadcrumb-item active">Dashboard</a></li> -->
                </ul>
