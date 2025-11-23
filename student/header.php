@@ -15,7 +15,8 @@ if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'], "student") == 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Exam - Dashboard</title>
     <link rel="shortcut icon" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap">
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
@@ -57,40 +58,26 @@ if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'], "student") == 0) {
                         </li>
                         <li id="dashboard">
                             <a href="index.php"><i class="fas fa-user-graduate"></i> <span> Dashboard</span></a>
-
                         </li>
-
 
                         <li id="courses">
                             <a href="courselist.php"><i class="fas fa-book-reader"></i> <span> Course List</span></a>
-
                         </li>
-
-
-
-
-
 
                         <li id="exams">
                             <a href="examlist.php"><i class="fas fa-book-reader"></i> <span>Exam List</span></a>
-
                         </li>
 
-
-
                         <li id="changepassword">
-                            <a href="changepassword.php"><i class="fas fa-unlock-alt"></i> Change Password</a>
+                            <a href="changepassword.php"><i class="fas fa-unlock-alt"></i> <span>Change
+                                    Password</span></a>
                         </li>
 
                         <li id="admitcard">
-                            <a href="qrmaker"><i class="fas fa-credit-card"></i>Admit Card</a>
+                            <a href="qrmaker"><i class="fas fa-credit-card"></i> <span>Admit Card</span></a>
                         </li>
 
-
-                        <li><a href="logout.php"><i class='fas fa-sign-out-alt'></i> Log Out</a></li>
-
-
-
+                        <li><a href="logout.php"><i class='fas fa-sign-out-alt'></i> <span>Log Out</span></a></li>
                     </ul>
                 </div>
             </div>
