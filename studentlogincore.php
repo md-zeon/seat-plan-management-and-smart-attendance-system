@@ -2,10 +2,16 @@
 include_once 'dbconnection.php';
 session_start();
 
-$studentid  = $_POST['studentid'];
+$login  = $_POST['email'];  // field still named email, but accepts ID or email
 $password = $_POST['password'];
 
-$query = "select * from student where studentid ='" . $studentid  . "' and password='" . $password . "';";
+if (is_numeric($login)) {
+    // Treat as student ID
+    $query = "select * from student where studentid ='" . $login  . "' and password='" . $password . "';";
+} else {
+    // Treat as email
+    $query = "select * from student where email ='" . $login  . "' and password='" . $password . "';";
+}
 $result = $conn->query($query);
 if ($result->num_rows > 0) {
 
