@@ -29,6 +29,8 @@ include("header.php");
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Enrolled Courses</th>
                                         <th class="text-right">Action</th>
                                     </tr>
                                 </thead>
@@ -45,12 +47,27 @@ include("header.php");
 
                                             $studentid = $row['studentid'];
                                             $name = $row['name'];
+                                            $email = $row['email'] ?? '';
+
+                                            // Get enrolled courses
+                                            $course_query = "SELECT GROUP_CONCAT(course.name SEPARATOR ', ') as courses FROM enroll JOIN course ON enroll.courseid = course.courseid WHERE enroll.studentid = '" . $studentid . "';";
+                                            $course_result = $conn->query($course_query);
+                                            $courses = '';
+                                            if ($course_result->num_rows > 0) {
+                                                $course_row = $course_result->fetch_assoc();
+                                                $courses = $course_row['courses'];
+                                            }
                                     ?>
                                             <tr>
                                                 <td><?php echo $studentid  ?></td>
                                                 <td><?php echo $name  ?></td>
+                                                <td><?php echo $email  ?></td>
+                                                <td><?php echo $courses ?: 'None'  ?></td>
                                                 <td class="text-right">
                                                     <div class="actions">
+                                                        <a href="studentedit.php?studentid=<?php echo $studentid ?>" class="btn btn-sm bg-primary-light">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
                                                         <a href="studentdeletecore.php?studentid=<?php echo $studentid ?>" class="btn btn-sm bg-danger-light">
                                                             <i class="fas fa-trash"></i>
                                                         </a>
@@ -75,7 +92,7 @@ include("header.php");
     include("footer.php");
     ?>
 
-    
+
 <script>
         $("#students").addClass("active");
     </script>
