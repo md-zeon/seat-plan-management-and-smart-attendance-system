@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      metadata: write
       
     steps:
       - name: Checkout repository
@@ -35,9 +36,11 @@ jobs:
           gh repo edit ${{ github.repository }} \
             --description "${{ steps.metadata.outputs.description }}"
           
-          # Update topics
-          gh repo edit ${{ github.repository }} \
-            --add-topic "${{ steps.metadata.outputs.topics }}"
+          # Update topics - add each topic individually
+          IFS=',' read -ra TOPICS <<< "${{ steps.metadata.outputs.topics }}"
+          for topic in "${TOPICS[@]}"; do
+            gh repo edit ${{ github.repository }} --add-topic "$topic"
+          done
 
       - name: Verify changes
         env:
