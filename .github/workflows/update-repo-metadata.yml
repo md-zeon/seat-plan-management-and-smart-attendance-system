@@ -1,0 +1,47 @@
+name: Update Repository Metadata
+
+# This workflow updates the repository description and topics
+# Run manually or when the metadata file is updated
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/repository-metadata.json'
+      - '.github/workflows/update-repo-metadata.yml'
+
+jobs:
+  update-metadata:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read metadata from JSON
+        id: metadata
+        run: |
+          DESCRIPTION=$(jq -r '.description' .github/repository-metadata.json)
+          TOPICS=$(jq -r '.topics | join(",")' .github/repository-metadata.json)
+          echo "description=$DESCRIPTION" >> $GITHUB_OUTPUT
+          echo "topics=$TOPICS" >> $GITHUB_OUTPUT
+
+      - name: Update repository description and topics
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Update description
+          gh repo edit ${{ github.repository }} \
+            --description "${{ steps.metadata.outputs.description }}"
+          
+          # Update topics
+          gh repo edit ${{ github.repository }} \
+            --add-topic "${{ steps.metadata.outputs.topics }}"
+
+      - name: Verify changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Repository metadata updated successfully!"
+          gh repo view ${{ github.repository }} --json description,repositoryTopics
