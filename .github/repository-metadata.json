@@ -1,0 +1,21 @@
+{
+  "description": "A web-based Seat Plan Management and Smart Attendance System using PHP for educational institutions to efficiently manage seating arrangements for examinations and automate attendance tracking with QR codes",
+  "topics": [
+    "php",
+    "mysql",
+    "attendance-system",
+    "seat-planning",
+    "qr-code",
+    "exam-management",
+    "education",
+    "bootstrap",
+    "pdf-generation",
+    "web-application",
+    "student-management",
+    "fpdf",
+    "xampp",
+    "admit-card"
+  ],
+  "homepage": "",
+  "notes": "This file contains the recommended description and topics for the GitHub repository 'About' section. These should be manually applied through the GitHub repository settings or via GitHub API/CLI with appropriate permissions."
+}
